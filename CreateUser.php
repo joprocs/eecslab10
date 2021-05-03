@@ -2,7 +2,7 @@
 
 $username = ($_POST['username']);
 $query = "SELECT user_id FROM Users WHERE user_id=$username"; 
-$updateUser= "UPDATE Users SET user_id='$username' WHERE user_id='$username'";
+$insertUser= "INSERT INTO Users (user_id) VALUES ('$username')";
 $mysqli = new mysqli("mysql.eecs.ku.edu", "jordanproctor", "Pain9hie", "jordanproctor");
 /* check connection */
 if ($mysqli->connect_errno) {
@@ -22,7 +22,7 @@ if ($username == "") // nothing entered
     }
     else   // creates new entry
     {
-        if ($mysqli->query($updateUser) === TRUE) {
+        if ($mysqli->query($insertUser) === TRUE) {
             echo "Record updated successfully";
           } 
           else 
