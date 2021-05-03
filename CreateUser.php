@@ -30,7 +30,7 @@ if ($username == "") // nothing entered
             echo "Error updating record: " . $mysqli->error;
           }
 
-        echo "Welcome" . $_POST["username"] . "!<br> You are successfully logged in!<br>";
+        echo "Welcome" . $username . "!<br> You are successfully logged in!<br>";
     }
     
 $mysqli->close();
